@@ -10,7 +10,7 @@
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 15:43:21 UTC Tue Jun 30 2015
+! Last configuration change at 12:46:03 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -72,7 +72,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.2 255.255.0.0
+ ip address 10.255.0.99 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -126,12 +126,12 @@ interface GigabitEthernet0/8
  speed auto
  media-type rj45
 !
-router bgp 65001
+router bgp 65534
  bgp log-neighbor-changes
  bgp listen range 172.16.0.0/24 peer-group WAN
  redistribute connected
  neighbor WAN peer-group
- neighbor WAN remote-as 65001
+ neighbor WAN remote-as 65534
  neighbor WAN route-reflector-client
 !
 ip forward-protocol nd
@@ -196,14 +196,14 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 15:53:39 UTC Tue Jun 30 2015
+! Last configuration change at 13:02:34 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname Router
+hostname site-1
 !
 boot-start-marker
 boot-end-marker
@@ -279,7 +279,7 @@ interface Loopback55
  ip address 10.1.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.13 255.255.0.0
+ ip address 10.255.0.19 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -298,7 +298,7 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.1.0.0 0.0.255.255
  redistribute connected
  passive-interface default
@@ -363,7 +363,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 15:55:58 UTC Tue Jun 30 2015
+! Last configuration change at 13:01:01 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -446,7 +446,7 @@ interface Loopback55
  ip address 10.2.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.11 255.255.0.0
+ ip address 10.255.0.29 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -465,13 +465,13 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.2.0.0 0.0.255.255
  redistribute connected
  passive-interface default
  no passive-interface GigabitEthernet0/1
  no passive-interface GigabitEthernet0/2
- eigrp router-id 10.2.252.1
+ eigrp router-id 10.2.255.1
  eigrp stub connected
 !
 ip forward-protocol nd
@@ -530,14 +530,14 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 15:59:35 UTC Tue Jun 30 2015
+! Last configuration change at 13:00:44 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
 service timestamps log datetime msec
 no service password-encryption
 !
-hostname Router
+hostname site-3
 !
 boot-start-marker
 boot-end-marker
@@ -591,26 +591,55 @@ redundancy
 !
 !
 !
+interface Loopback0
+ ip address 10.3.255.1 255.255.255.255
+!
+interface Loopback50
+ ip address 10.3.0.1 255.255.255.0
+!
+interface Loopback51
+ ip address 10.3.1.1 255.255.255.0
+!
+interface Loopback52
+ ip address 10.3.2.1 255.255.255.0
+!
+interface Loopback53
+ ip address 10.3.128.1 255.255.255.0
+!
+interface Loopback54
+ ip address 10.3.129.1 255.255.255.0
+!
+interface Loopback55
+ ip address 10.3.130.1 255.255.255.0
+!
 interface GigabitEthernet0/0
- ip address 10.255.0.12 255.255.0.0
+ ip address 10.255.0.39 255.255.0.0
  shutdown
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/1
- no ip address
- shutdown
+ ip address 10.3.254.2 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
 interface GigabitEthernet0/2
- no ip address
- shutdown
+ ip address 10.3.254.6 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
+!
+!
+router eigrp 10
+ network 10.3.0.0 0.0.255.255
+ redistribute connected
+ passive-interface default
+ no passive-interface GigabitEthernet0/1
+ no passive-interface GigabitEthernet0/2
+ eigrp router-id 10.3.255.1
+ eigrp stub connected
 !
 ip forward-protocol nd
 !
@@ -668,7 +697,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 15:54:54 UTC Tue Jun 30 2015
+! Last configuration change at 13:02:20 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -751,7 +780,7 @@ interface Loopback55
  ip address 10.0.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.14 255.255.0.0
+ ip address 10.255.0.9 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -770,7 +799,7 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.0.0.0 0.0.255.255
  redistribute connected
  passive-interface default
@@ -834,7 +863,7 @@ end</entry>
     <node location="383,40" subtype="IOSv" type="SIMPLE" name="hub-1">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:52:38 UTC Tue Jun 30 2015
+! Last configuration change at 12:58:10 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -867,7 +896,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -886,7 +915,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -945,7 +974,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.8 255.255.0.0
+ ip address 10.255.0.1 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -965,7 +994,7 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.0.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 1000 255 1 1500 route-map bgp-to-eigrp
@@ -975,38 +1004,54 @@ router eigrp 7
  eigrp router-id 10.152.255.1
 !
 router bgp 65000
+ template peer-policy DMVPN
+  route-map DMVPN-PRI-OUT out
+  route-reflector-client
+  next-hop-self all
+  soft-reconfiguration inbound
+ exit-peer-policy
+ !
+ template peer-policy DMVPN-PRI
+  route-map DMVPN-PRI-IN in
+  inherit peer-policy DMVPN 1
+ exit-peer-policy
+ !
+ template peer-policy DMVPN-TER
+  route-map DMVPN-TER-IN in
+  inherit peer-policy DMVPN 1
+ exit-peer-policy
+ !
+ template peer-session DMVPN-SESS
+  remote-as 65000
+ exit-peer-session
+ !
  bgp router-id 10.152.255.1
  bgp log-neighbor-changes
+ bgp redistribute-internal
+ aggregate-address 10.3.0.0 255.255.0.0
+ aggregate-address 10.2.0.0 255.255.0.0
+ aggregate-address 10.1.0.0 255.255.0.0
+ aggregate-address 10.0.0.0 255.255.0.0
  timers bgp 5 15
  redistribute connected
- redistribute eigrp 7 route-map eigrp-to-bgp
- neighbor DMVPN-PRI-PEER peer-group
- neighbor DMVPN-PRI-PEER remote-as 65000
- neighbor DMVPN-PRI-PEER route-reflector-client
- neighbor DMVPN-PRI-PEER next-hop-self all
- neighbor DMVPN-PRI-PEER send-community
- neighbor DMVPN-PRI-PEER soft-reconfiguration inbound
- neighbor DMVPN-PRI-PEER route-map DMVPN-PRI-IN in
- neighbor DMVPN-PRI-PEER route-map DMVPN-PRI-OUT out
- neighbor DMVPN-TER-PEER peer-group
- neighbor DMVPN-TER-PEER remote-as 65000
- neighbor DMVPN-TER-PEER route-reflector-client
- neighbor DMVPN-TER-PEER next-hop-self all
- neighbor DMVPN-TER-PEER send-community
- neighbor DMVPN-TER-PEER soft-reconfiguration inbound
- neighbor DMVPN-TER-PEER route-map DMVPN-TER-IN in
- neighbor DMVPN-TER-PEER route-map DMVPN-PRI-OUT out
- neighbor 10.152.0.11 peer-group DMVPN-PRI-PEER
- neighbor 10.152.0.12 peer-group DMVPN-TER-PEER
- neighbor 10.152.0.21 peer-group DMVPN-PRI-PEER
- neighbor 10.152.0.22 peer-group DMVPN-TER-PEER
- neighbor 10.152.0.31 peer-group DMVPN-PRI-PEER
- neighbor 10.152.0.32 peer-group DMVPN-TER-PEER
+ redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor 10.152.0.11 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.11 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.12 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.12 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.21 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.21 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.22 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.22 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.31 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.31 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.32 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.32 inherit peer-policy DMVPN-PRI
  !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.1 remote-as 65001
-  neighbor 172.16.0.1 local-as 65001
+  neighbor 172.16.0.1 remote-as 65534
+  neighbor 172.16.0.1 local-as 65534
   neighbor 172.16.0.1 update-source GigabitEthernet0/1
   neighbor 172.16.0.1 activate
  exit-address-family
@@ -1039,6 +1084,24 @@ ip prefix-list SITE-2-MAIN seq 10 permit 10.152.255.21/32
 ip prefix-list SITE-2-MAIN seq 20 permit 10.2.0.0/17 le 32
 ip prefix-list SITE-2-MAIN seq 100 deny 0.0.0.0/0 le 32
 !
+ip prefix-list SITE-3-DR seq 10 permit 10.152.255.32/32
+ip prefix-list SITE-3-DR seq 20 permit 10.3.128.0/17 le 32
+ip prefix-list SITE-3-DR seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SITE-3-MAIN seq 10 permit 10.152.255.31/32
+ip prefix-list SITE-3-MAIN seq 20 permit 10.3.0.0/17 le 32
+ip prefix-list SITE-3-MAIN seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SUMMARIES seq 10 permit 10.0.0.0/16
+ip prefix-list SUMMARIES seq 15 deny 10.0.0.0/16 le 32
+ip prefix-list SUMMARIES seq 20 permit 10.1.0.0/16
+ip prefix-list SUMMARIES seq 25 deny 10.1.0.0/16 le 32
+ip prefix-list SUMMARIES seq 30 permit 10.2.0.0/16
+ip prefix-list SUMMARIES seq 35 deny 10.2.0.0/16 le 32
+ip prefix-list SUMMARIES seq 40 permit 10.3.0.0/16
+ip prefix-list SUMMARIES seq 45 deny 10.3.0.0/16 le 32
+ip prefix-list SUMMARIES seq 100 permit 0.0.0.0/0 le 32
+!
 route-map DMVPN-TER-IN deny 10
  match ip address prefix-list HUB
 !
@@ -1056,15 +1119,16 @@ route-map DMVPN-TER-IN permit 30
 !
 route-map DMVPN-TER-IN deny 100
 !
+route-map bgp-to-eigrp permit 10
+ match ip address prefix-list SUMMARIES
+ set tag 100
+!
+route-map bgp-to-eigrp deny 100
+!
 route-map eigrp-to-bgp deny 10
  match tag 100
 !
 route-map eigrp-to-bgp permit 100
-!
-route-map bgp-to-eigrp permit 10
- set tag 100
-!
-route-map bgp-to-eigrp deny 20
 !
 route-map DMVPN-PRI-IN deny 10
  match ip address prefix-list HUB
@@ -1084,6 +1148,7 @@ route-map DMVPN-PRI-IN permit 30
 route-map DMVPN-PRI-IN deny 100
 !
 route-map DMVPN-PRI-OUT permit 10
+ match ip address prefix-list SUMMARIES
  set local-preference 20000
  set as-path prepend 65010
 !
@@ -1137,7 +1202,7 @@ end</entry>
     <node location="597,45" subtype="IOSv" type="SIMPLE" name="hub-2">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:53:46 UTC Tue Jun 30 2015
+! Last configuration change at 12:58:55 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1170,7 +1235,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -1189,7 +1254,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -1248,7 +1313,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.7 255.255.0.0
+ ip address 10.255.0.2 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1268,7 +1333,7 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.0.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 50000 255 1 1500 route-map bgp-to-eigrp
@@ -1278,38 +1343,54 @@ router eigrp 7
  eigrp router-id 10.152.255.2
 !
 router bgp 65000
+ template peer-policy DMVPN
+  route-map DMVPN-PRI-OUT out
+  route-reflector-client
+  next-hop-self all
+  soft-reconfiguration inbound
+ exit-peer-policy
+ !
+ template peer-policy DMVPN-PRI
+  route-map DMVPN-PRI-IN in
+  inherit peer-policy DMVPN 1
+ exit-peer-policy
+ !
+ template peer-policy DMVPN-TER
+  route-map DMVPN-TER-IN in
+  inherit peer-policy DMVPN 1
+ exit-peer-policy
+ !
+ template peer-session DMVPN-SESS
+  remote-as 65000
+ exit-peer-session
+ !
  bgp router-id 10.152.255.2
  bgp log-neighbor-changes
+ bgp redistribute-internal
+ aggregate-address 10.3.0.0 255.255.0.0
+ aggregate-address 10.2.0.0 255.255.0.0
+ aggregate-address 10.1.0.0 255.255.0.0
+ aggregate-address 10.0.0.0 255.255.0.0
  timers bgp 5 15
  redistribute connected
- redistribute eigrp 7 route-map eigrp-to-bgp
- neighbor DMVPN-SEC-PEER peer-group
- neighbor DMVPN-SEC-PEER remote-as 65000
- neighbor DMVPN-SEC-PEER route-reflector-client
- neighbor DMVPN-SEC-PEER next-hop-self all
- neighbor DMVPN-SEC-PEER send-community
- neighbor DMVPN-SEC-PEER soft-reconfiguration inbound
- neighbor DMVPN-SEC-PEER route-map DMVPN-SEC-IN in
- neighbor DMVPN-SEC-PEER route-map DMVPN-SEC-OUT out
- neighbor DMVPN-QUA-PEER peer-group
- neighbor DMVPN-QUA-PEER remote-as 65000
- neighbor DMVPN-QUA-PEER route-reflector-client
- neighbor DMVPN-QUA-PEER next-hop-self all
- neighbor DMVPN-QUA-PEER send-community
- neighbor DMVPN-QUA-PEER soft-reconfiguration inbound
- neighbor DMVPN-QUA-PEER route-map DMVPN-QUA-IN in
- neighbor DMVPN-QUA-PEER route-map DMVPN-SEC-OUT out
- neighbor 10.152.0.11 peer-group DMVPN-SEC-PEER
- neighbor 10.152.0.12 peer-group DMVPN-QUA-PEER
- neighbor 10.152.0.21 peer-group DMVPN-SEC-PEER
- neighbor 10.152.0.22 peer-group DMVPN-QUA-PEER
- neighbor 10.152.0.31 peer-group DMVPN-SEC-PEER
- neighbor 10.152.0.32 peer-group DMVPN-QUA-PEER
+ redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor 10.152.0.11 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.11 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.12 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.12 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.21 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.21 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.22 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.22 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.31 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.31 inherit peer-policy DMVPN-PRI
+ neighbor 10.152.0.32 inherit peer-session DMVPN-SESS
+ neighbor 10.152.0.32 inherit peer-policy DMVPN-PRI
  !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.5 remote-as 65001
-  neighbor 172.16.0.5 local-as 65001
+  neighbor 172.16.0.5 remote-as 65534
+  neighbor 172.16.0.5 local-as 65534
   neighbor 172.16.0.5 update-source GigabitEthernet0/1
   neighbor 172.16.0.5 activate
  exit-address-family
@@ -1326,11 +1407,11 @@ ip prefix-list HUB seq 15 permit 10.152.255.2/32
 ip prefix-list HUB seq 20 permit 10.0.0.0/16 le 32
 ip prefix-list HUB seq 100 deny 0.0.0.0/0 le 32
 !
-ip prefix-list SITE-1-DR seq 10 permit 10.152.0.4/32
+ip prefix-list SITE-1-DR seq 10 permit 10.152.255.12/32
 ip prefix-list SITE-1-DR seq 20 permit 10.1.128.0/17 le 32
 ip prefix-list SITE-1-DR seq 100 deny 0.0.0.0/0 le 32
 !
-ip prefix-list SITE-1-MAIN seq 10 permit 10.152.0.3/32
+ip prefix-list SITE-1-MAIN seq 10 permit 10.152.255.11/32
 ip prefix-list SITE-1-MAIN seq 20 permit 10.1.0.0/17 le 32
 ip prefix-list SITE-1-MAIN seq 100 deny 0.0.0.0/0 le 32
 !
@@ -1342,24 +1423,46 @@ ip prefix-list SITE-2-MAIN seq 10 permit 10.152.255.21/32
 ip prefix-list SITE-2-MAIN seq 20 permit 10.2.0.0/17 le 32
 ip prefix-list SITE-2-MAIN seq 100 deny 0.0.0.0/0 le 32
 !
+ip prefix-list SITE-3-DR seq 10 permit 10.152.255.32/32
+ip prefix-list SITE-3-DR seq 20 permit 10.3.128.0/17 le 32
+ip prefix-list SITE-3-DR seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SITE-3-MAIN seq 10 permit 10.152.255.31/32
+ip prefix-list SITE-3-MAIN seq 20 permit 10.3.0.0/17 le 32
+ip prefix-list SITE-3-MAIN seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SUMMARIES seq 10 permit 10.0.0.0/16
+ip prefix-list SUMMARIES seq 15 deny 10.0.0.0/16 le 32
+ip prefix-list SUMMARIES seq 20 permit 10.1.0.0/16
+ip prefix-list SUMMARIES seq 25 deny 10.1.0.0/16 le 32
+ip prefix-list SUMMARIES seq 30 permit 10.2.0.0/16
+ip prefix-list SUMMARIES seq 35 deny 10.2.0.0/16 le 32
+ip prefix-list SUMMARIES seq 40 permit 10.3.0.0/16
+ip prefix-list SUMMARIES seq 45 deny 10.3.0.0/16 le 32
+ip prefix-list SUMMARIES seq 100 permit 0.0.0.0/0 le 32
+!
 route-map DMVPN-QUA-IN permit 10
+ match ip address prefix-list HUB
+!
+route-map DMVPN-QUA-IN permit 20
  match ip address prefix-list HUB SITE-1-MAIN SITE-2-MAIN SITE-3-MAIN
  set local-preference 500
  set weight 0
  set as-path prepend 65010 65010 65010 65010
 !
-route-map DMVPN-QUA-IN permit 20
+route-map DMVPN-QUA-IN permit 30
  match ip address prefix-list SITE-1-DR SITE-2-DR SITE-3-DR
  set local-preference 10000
  set weight 0
  set as-path prepend 65010 65010
 !
-route-map DMVPN-QUA-IN deny 30
+route-map DMVPN-QUA-IN deny 100
 !
 route-map bgp-to-eigrp permit 10
+ match ip address prefix-list SUMMARIES
  set tag 100
 !
-route-map bgp-to-eigrp deny 20
+route-map bgp-to-eigrp deny 100
 !
 route-map eigrp-to-bgp deny 10
  match tag 100
@@ -1384,6 +1487,7 @@ route-map DMVPN-SEC-IN permit 30
 route-map DMVPN-SEC-IN deny 100
 !
 route-map DMVPN-SEC-OUT permit 10
+ match ip address prefix-list SUMMARIES
  set local-preference 10000
  set as-path prepend 65010 65010
 !
@@ -1437,7 +1541,7 @@ end</entry>
     <node location="133,289" subtype="IOSv" type="SIMPLE" name="spoke-1">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:52:42 UTC Tue Jun 30 2015
+! Last configuration change at 12:59:02 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1470,7 +1574,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -1489,7 +1593,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -1532,10 +1636,10 @@ interface Tunnel100
  ip mtu 1400
  ip nhrp authentication NHRPKEY
  ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.1 172.16.255.1
  ip nhrp map multicast 172.16.255.1
  ip nhrp map 10.152.0.2 172.16.255.2
  ip nhrp map multicast 172.16.255.2
- ip nhrp map 10.152.0.1 172.16.255.1
  ip nhrp network-id 100
  ip nhrp nhs 10.152.0.1
  ip nhrp nhs 10.152.0.2
@@ -1556,7 +1660,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.3 255.255.0.0
+ ip address 10.255.0.11 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1576,11 +1680,10 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.1.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 1000 255 1 1500 route-map bgp-to-eigrp
- distance eigrp 19 170
  passive-interface default
  no passive-interface GigabitEthernet0/2
  eigrp router-id 10.152.255.11
@@ -1588,9 +1691,10 @@ router eigrp 7
 router bgp 65000
  bgp router-id 10.152.255.11
  bgp log-neighbor-changes
+ bgp redistribute-internal
  timers bgp 5 15
  redistribute connected
- redistribute eigrp 7 route-map eigrp-to-bgp
+ redistribute eigrp 10 route-map eigrp-to-bgp
  neighbor DMVPN-HUB peer-group
  neighbor DMVPN-HUB remote-as 65000
  neighbor DMVPN-HUB next-hop-self all
@@ -1602,15 +1706,14 @@ router bgp 65000
  !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.9 remote-as 65001
-  neighbor 172.16.0.9 local-as 65001
+  neighbor 172.16.0.9 remote-as 65534
+  neighbor 172.16.0.9 local-as 65534
   neighbor 172.16.0.9 update-source GigabitEthernet0/1
   neighbor 172.16.0.9 activate
  exit-address-family
 !
 ip forward-protocol nd
 !
-ip bgp-community new-format
 !
 no ip http server
 no ip http secure-server
@@ -1627,7 +1730,7 @@ ip prefix-list SITE-1-MAIN seq 100 deny 0.0.0.0/0 le 32
 route-map bgp-to-eigrp permit 10
  set tag 100
 !
-route-map bgp-to-eigrp deny 20
+route-map bgp-to-eigrp deny 100
 !
 route-map eigrp-to-bgp deny 10
  match tag 100
@@ -1697,7 +1800,7 @@ end</entry>
     <node location="231,340" subtype="IOSv" type="SIMPLE" name="spoke-2">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:54:18 UTC Tue Jun 30 2015
+! Last configuration change at 12:59:06 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1730,7 +1833,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -1749,7 +1852,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -1816,7 +1919,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.4 255.255.0.0
+ ip address 10.255.0.12 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1836,47 +1939,40 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.1.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 50000 255 1 1500 route-map bgp-to-eigrp
- distance eigrp 19 170
  passive-interface default
  no passive-interface GigabitEthernet0/2
- eigrp router-id 10.152.255.22
+ eigrp router-id 10.152.255.12
 !
 router bgp 65000
- bgp router-id 10.152.255.22
+ bgp router-id 10.152.255.12
  bgp log-neighbor-changes
+ bgp redistribute-internal
  timers bgp 5 15
+ redistribute connected
+ redistribute eigrp 10 route-map eigrp-to-bgp
  neighbor DMVPN-HUB peer-group
  neighbor DMVPN-HUB remote-as 65000
+ neighbor DMVPN-HUB next-hop-self all
+ neighbor DMVPN-HUB soft-reconfiguration inbound
+ neighbor DMVPN-HUB route-map DMVPN-IN in
+ neighbor DMVPN-HUB route-map DMVPN-OUT out
  neighbor 10.152.0.1 peer-group DMVPN-HUB
  neighbor 10.152.0.2 peer-group DMVPN-HUB
  !
- address-family ipv4
-  redistribute eigrp 7 route-map eigrp-to-bgp
-  neighbor DMVPN-HUB send-community
-  neighbor DMVPN-HUB next-hop-self all
-  neighbor DMVPN-HUB soo 65000:1
-  neighbor DMVPN-HUB soft-reconfiguration inbound
-  neighbor DMVPN-HUB route-map DMVPN-IN in
-  neighbor DMVPN-HUB route-map DMVPN-OUT out
-  neighbor 10.152.0.1 activate
-  neighbor 10.152.0.2 activate
- exit-address-family
- !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.13 remote-as 65001
-  neighbor 172.16.0.13 local-as 65001
+  neighbor 172.16.0.13 remote-as 65534
+  neighbor 172.16.0.13 local-as 65534
   neighbor 172.16.0.13 update-source GigabitEthernet0/1
   neighbor 172.16.0.13 activate
  exit-address-family
 !
 ip forward-protocol nd
 !
-ip bgp-community new-format
 !
 no ip http server
 no ip http secure-server
@@ -1893,7 +1989,7 @@ ip prefix-list SITE-1-MAIN seq 100 deny 0.0.0.0/0 le 32
 route-map bgp-to-eigrp permit 10
  set tag 100
 !
-route-map bgp-to-eigrp deny 20
+route-map bgp-to-eigrp deny 100
 !
 route-map eigrp-to-bgp deny 10
  match tag 100
@@ -1902,7 +1998,6 @@ route-map eigrp-to-bgp permit 20
  match ip address prefix-list SITE-1-MAIN SITE-1-DR
  set local-preference 40000
  set weight 0
- set extcommunity soo 65000:1
 !
 route-map eigrp-to-bgp deny 100
 !
@@ -1964,7 +2059,7 @@ end</entry>
     <node location="426,336" subtype="IOSv" type="SIMPLE" name="spoke-3">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:54:46 UTC Tue Jun 30 2015
+! Last configuration change at 12:59:21 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1997,7 +2092,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -2016,7 +2111,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -2083,7 +2178,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.5 255.255.0.0
+ ip address 10.255.0.21 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2103,39 +2198,34 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.2.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 1000 255 1 1500 route-map bgp-to-eigrp
- distance eigrp 19 170
  passive-interface default
  no passive-interface GigabitEthernet0/2
- eigrp router-id 10.152.255.31
+ eigrp router-id 10.152.255.21
 !
 router bgp 65000
- bgp router-id 10.152.255.31
+ bgp router-id 10.152.255.21
  bgp log-neighbor-changes
+ bgp redistribute-internal
  timers bgp 5 15
+ redistribute connected
+ redistribute eigrp 10 route-map eigrp-to-bgp
  neighbor DMVPN-HUB peer-group
  neighbor DMVPN-HUB remote-as 65000
+ neighbor DMVPN-HUB next-hop-self all
+ neighbor DMVPN-HUB soft-reconfiguration inbound
+ neighbor DMVPN-HUB route-map DMVPN-IN in
+ neighbor DMVPN-HUB route-map DMVPN-OUT out
  neighbor 10.152.0.1 peer-group DMVPN-HUB
  neighbor 10.152.0.2 peer-group DMVPN-HUB
  !
- address-family ipv4
-  redistribute connected
-  redistribute eigrp 7 route-map eigrp-to-bgp
-  neighbor DMVPN-HUB next-hop-self all
-  neighbor DMVPN-HUB soft-reconfiguration inbound
-  neighbor DMVPN-HUB route-map DMVPN-IN in
-  neighbor DMVPN-HUB route-map DMVPN-OUT out
-  neighbor 10.152.0.1 activate
-  neighbor 10.152.0.2 activate
- exit-address-family
- !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.17 remote-as 65001
-  neighbor 172.16.0.17 local-as 65001
+  neighbor 172.16.0.17 remote-as 65534
+  neighbor 172.16.0.17 local-as 65534
   neighbor 172.16.0.17 update-source GigabitEthernet0/1
   neighbor 172.16.0.17 activate
  exit-address-family
@@ -2228,7 +2318,7 @@ end</entry>
     <node location="556,336" subtype="IOSv" type="SIMPLE" name="spoke-4">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:52:37 UTC Tue Jun 30 2015
+! Last configuration change at 13:00:03 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2261,7 +2351,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -2280,7 +2370,7 @@ redundancy
 !
 !
 ! 
-crypto keyring DMVPNKEYRINGFVRF vrf f-vrf 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
   pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
@@ -2347,7 +2437,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.6 255.255.0.0
+ ip address 10.255.0.22 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2367,11 +2457,10 @@ interface GigabitEthernet0/2
  media-type rj45
 !
 !
-router eigrp 7
+router eigrp 10
  network 10.2.0.0 0.0.255.255
  redistribute connected
  redistribute bgp 65000 metric 10000 50000 255 1 1500 route-map bgp-to-eigrp
- distance eigrp 19 170
  passive-interface default
  no passive-interface GigabitEthernet0/2
  eigrp router-id 10.152.255.22
@@ -2379,26 +2468,23 @@ router eigrp 7
 router bgp 65000
  bgp router-id 10.152.255.22
  bgp log-neighbor-changes
+ bgp redistribute-internal
  timers bgp 5 15
+ redistribute connected
+ redistribute eigrp 10 route-map eigrp-to-bgp
  neighbor DMVPN-HUB peer-group
  neighbor DMVPN-HUB remote-as 65000
+ neighbor DMVPN-HUB next-hop-self all
+ neighbor DMVPN-HUB soft-reconfiguration inbound
+ neighbor DMVPN-HUB route-map DMVPN-IN in
+ neighbor DMVPN-HUB route-map DMVPN-OUT out
  neighbor 10.152.0.1 peer-group DMVPN-HUB
  neighbor 10.152.0.2 peer-group DMVPN-HUB
  !
- address-family ipv4
-  redistribute eigrp 7 route-map eigrp-to-bgp
-  neighbor DMVPN-HUB next-hop-self all
-  neighbor DMVPN-HUB soft-reconfiguration inbound
-  neighbor DMVPN-HUB route-map DMVPN-IN in
-  neighbor DMVPN-HUB route-map DMVPN-OUT out
-  neighbor 10.152.0.1 activate
-  neighbor 10.152.0.2 activate
- exit-address-family
- !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.21 remote-as 65001
-  neighbor 172.16.0.21 local-as 65001
+  neighbor 172.16.0.21 remote-as 65534
+  neighbor 172.16.0.21 local-as 65534
   neighbor 172.16.0.21 update-source GigabitEthernet0/1
   neighbor 172.16.0.21 activate
  exit-address-family
@@ -2421,7 +2507,7 @@ ip prefix-list SITE-2-MAIN seq 100 deny 0.0.0.0/0 le 32
 route-map bgp-to-eigrp permit 10
  set tag 100
 !
-route-map bgp-to-eigrp deny 20
+route-map bgp-to-eigrp deny 100
 !
 route-map eigrp-to-bgp deny 10
  match tag 100
@@ -2491,7 +2577,7 @@ end</entry>
     <node location="725,331" subtype="IOSv" type="SIMPLE" name="spoke-5">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:55:12 UTC Tue Jun 30 2015
+! Last configuration change at 13:00:39 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2524,7 +2610,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -2543,11 +2629,28 @@ redundancy
 !
 !
 ! 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
+  pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
 !
 !
+crypto isakmp policy 10
+ encr aes 192
+ hash md5
+ authentication pre-share
+ group 2
+crypto isakmp invalid-spi-recovery
+crypto isakmp keepalive 10 periodic
 !
+crypto ipsec security-association replay window-size 1024
+!
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
+ mode tunnel
+!
+crypto ipsec profile DMVPN_PROFILE
+ set security-association lifetime seconds 120
+ set transform-set DMVPN_TRANS_SET 
 !
 !
 !
@@ -2559,10 +2662,41 @@ interface Loopback0
  ip address 10.152.255.31 255.255.255.255
 !
 interface Loopback20
+ ip vrf forwarding f-vrf
  ip address 172.16.255.31 255.255.255.255
 !
+interface Tunnel100
+ description ## DMVPN SPOKE ##
+ ip address 10.152.0.31 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication NHRPKEY
+ ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.1 172.16.255.1
+ ip nhrp map multicast 172.16.255.1
+ ip nhrp map 10.152.0.2 172.16.255.2
+ ip nhrp map multicast 172.16.255.2
+ ip nhrp network-id 100
+ ip nhrp nhs 10.152.0.1
+ ip nhrp nhs 10.152.0.2
+ ip nhrp registration no-unique
+ ip nhrp registration timeout 120
+ ip nhrp shortcut
+ ip nhrp redirect
+ no ip split-horizon
+ ip tcp adjust-mss 1360
+ load-interval 30
+ if-state nhrp
+ qos pre-classify
+ tunnel source Loopback20
+ tunnel mode gre multipoint
+ tunnel key 0
+ tunnel path-mtu-discovery
+ tunnel vrf f-vrf
+ tunnel protection ipsec profile DMVPN_PROFILE
+!
 interface GigabitEthernet0/0
- ip address 10.255.0.9 255.255.0.0
+ ip address 10.255.0.31 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2576,18 +2710,40 @@ interface GigabitEthernet0/1
  media-type rj45
 !
 interface GigabitEthernet0/2
- no ip address
+ ip address 10.3.254.1 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
+!
+router eigrp 10
+ network 10.3.0.0 0.0.255.255
+ redistribute connected
+ redistribute bgp 65000 metric 10000 1000 255 1 1500 route-map bgp-to-eigrp
+ passive-interface default
+ no passive-interface GigabitEthernet0/2
+ eigrp router-id 10.152.255.31
+!
 router bgp 65000
+ bgp router-id 10.152.255.31
  bgp log-neighbor-changes
+ bgp redistribute-internal
+ timers bgp 5 15
+ redistribute connected
+ redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor DMVPN-HUB peer-group
+ neighbor DMVPN-HUB remote-as 65000
+ neighbor DMVPN-HUB next-hop-self all
+ neighbor DMVPN-HUB soft-reconfiguration inbound
+ neighbor DMVPN-HUB route-map DMVPN-IN in
+ neighbor DMVPN-HUB route-map DMVPN-OUT out
+ neighbor 10.152.0.1 peer-group DMVPN-HUB
+ neighbor 10.152.0.2 peer-group DMVPN-HUB
  !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.25 remote-as 65001
-  neighbor 172.16.0.25 local-as 65001
+  neighbor 172.16.0.25 remote-as 65534
+  neighbor 172.16.0.25 local-as 65534
   neighbor 172.16.0.25 update-source GigabitEthernet0/1
   neighbor 172.16.0.25 activate
  exit-address-family
@@ -2598,6 +2754,39 @@ ip forward-protocol nd
 no ip http server
 no ip http secure-server
 !
+!
+ip prefix-list SITE-3-DR seq 10 permit 10.152.255.32/32
+ip prefix-list SITE-3-DR seq 20 permit 10.3.128.0/17 le 32
+ip prefix-list SITE-3-DR seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SITE-3-MAIN seq 10 permit 10.152.255.31/32
+ip prefix-list SITE-3-MAIN seq 20 permit 10.3.0.0/17 le 32
+ip prefix-list SITE-3-MAIN seq 100 deny 0.0.0.0/0 le 32
+!
+route-map bgp-to-eigrp permit 10
+ set tag 100
+!
+route-map bgp-to-eigrp deny 100
+!
+route-map eigrp-to-bgp deny 10
+ match tag 100
+!
+route-map eigrp-to-bgp permit 20
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+ set local-preference 40000
+ set weight 0
+!
+route-map eigrp-to-bgp deny 100
+!
+route-map DMVPN-OUT permit 10
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+!
+route-map DMVPN-OUT deny 100
+!
+route-map DMVPN-IN deny 10
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+!
+route-map DMVPN-IN permit 100
 !
 !
 !
@@ -2647,7 +2836,7 @@ end</entry>
     <node location="833,271" subtype="IOSv" type="SIMPLE" name="spoke-6">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 15:57:51 UTC Tue Jun 30 2015
+! Last configuration change at 12:59:49 UTC Thu Jul 2 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2680,7 +2869,7 @@ mmi snmp-timeout 180
 !
 !
 ip vrf f-vrf
- rd 65000:0
+ rd 65534:0
 !
 !
 !
@@ -2699,11 +2888,28 @@ redundancy
 !
 !
 ! 
+crypto keyring DMVPN_KEYRING vrf f-vrf 
+  pre-shared-key address 0.0.0.0 0.0.0.0 key CRYPTOKEY
 !
 !
 !
 !
+crypto isakmp policy 10
+ encr aes 192
+ hash md5
+ authentication pre-share
+ group 2
+crypto isakmp invalid-spi-recovery
+crypto isakmp keepalive 10 periodic
 !
+crypto ipsec security-association replay window-size 1024
+!
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
+ mode tunnel
+!
+crypto ipsec profile DMVPN_PROFILE
+ set security-association lifetime seconds 120
+ set transform-set DMVPN_TRANS_SET 
 !
 !
 !
@@ -2715,10 +2921,41 @@ interface Loopback0
  ip address 10.152.255.32 255.255.255.255
 !
 interface Loopback20
+ ip vrf forwarding f-vrf
  ip address 172.16.255.32 255.255.255.255
 !
+interface Tunnel100
+ description ## DMVPN SPOKE ##
+ ip address 10.152.0.32 255.255.255.0
+ no ip redirects
+ ip mtu 1400
+ ip nhrp authentication NHRPKEY
+ ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.1 172.16.255.1
+ ip nhrp map multicast 172.16.255.1
+ ip nhrp map 10.152.0.2 172.16.255.2
+ ip nhrp map multicast 172.16.255.2
+ ip nhrp network-id 100
+ ip nhrp nhs 10.152.0.1
+ ip nhrp nhs 10.152.0.2
+ ip nhrp registration no-unique
+ ip nhrp registration timeout 120
+ ip nhrp shortcut
+ ip nhrp redirect
+ no ip split-horizon
+ ip tcp adjust-mss 1360
+ load-interval 30
+ if-state nhrp
+ qos pre-classify
+ tunnel source Loopback20
+ tunnel mode gre multipoint
+ tunnel key 0
+ tunnel path-mtu-discovery
+ tunnel vrf f-vrf
+ tunnel protection ipsec profile DMVPN_PROFILE
+!
 interface GigabitEthernet0/0
- ip address 10.255.0.10 255.255.0.0
+ ip address 10.255.0.32 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2732,19 +2969,40 @@ interface GigabitEthernet0/1
  media-type rj45
 !
 interface GigabitEthernet0/2
- no ip address
- shutdown
+ ip address 10.3.254.5 255.255.255.252
  duplex auto
  speed auto
  media-type rj45
 !
+!
+router eigrp 10
+ network 10.3.0.0 0.0.255.255
+ redistribute connected
+ redistribute bgp 65000 metric 10000 50000 255 1 1500 route-map bgp-to-eigrp
+ passive-interface default
+ no passive-interface GigabitEthernet0/2
+ eigrp router-id 10.152.255.32
+!
 router bgp 65000
+ bgp router-id 10.152.255.32
  bgp log-neighbor-changes
+ bgp redistribute-internal
+ timers bgp 5 15
+ redistribute connected
+ redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor DMVPN-HUB peer-group
+ neighbor DMVPN-HUB remote-as 65000
+ neighbor DMVPN-HUB next-hop-self all
+ neighbor DMVPN-HUB soft-reconfiguration inbound
+ neighbor DMVPN-HUB route-map DMVPN-IN in
+ neighbor DMVPN-HUB route-map DMVPN-OUT out
+ neighbor 10.152.0.1 peer-group DMVPN-HUB
+ neighbor 10.152.0.2 peer-group DMVPN-HUB
  !
  address-family ipv4 vrf f-vrf
   redistribute connected
-  neighbor 172.16.0.29 remote-as 65001
-  neighbor 172.16.0.29 local-as 65001
+  neighbor 172.16.0.29 remote-as 65534
+  neighbor 172.16.0.29 local-as 65534
   neighbor 172.16.0.29 update-source GigabitEthernet0/1
   neighbor 172.16.0.29 activate
  exit-address-family
@@ -2755,6 +3013,39 @@ ip forward-protocol nd
 no ip http server
 no ip http secure-server
 !
+!
+ip prefix-list SITE-3-DR seq 10 permit 10.152.255.32/32
+ip prefix-list SITE-3-DR seq 20 permit 10.3.128.0/17 le 32
+ip prefix-list SITE-3-DR seq 100 deny 0.0.0.0/0 le 32
+!
+ip prefix-list SITE-3-MAIN seq 10 permit 10.152.255.31/32
+ip prefix-list SITE-3-MAIN seq 20 permit 10.3.0.0/17 le 32
+ip prefix-list SITE-3-MAIN seq 100 deny 0.0.0.0/0 le 32
+!
+route-map bgp-to-eigrp permit 10
+ set tag 100
+!
+route-map bgp-to-eigrp deny 100
+!
+route-map eigrp-to-bgp deny 10
+ match tag 100
+!
+route-map eigrp-to-bgp permit 20
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+ set local-preference 40000
+ set weight 0
+!
+route-map eigrp-to-bgp deny 100
+!
+route-map DMVPN-OUT permit 10
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+!
+route-map DMVPN-OUT deny 100
+!
+route-map DMVPN-IN deny 10
+ match ip address prefix-list SITE-3-MAIN SITE-3-DR
+!
+route-map DMVPN-IN permit 100
 !
 !
 !
