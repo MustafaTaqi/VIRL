@@ -11,7 +11,7 @@
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:06 UTC Thu Jul 2 2015
+! Last configuration change at 12:54:32 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -198,7 +198,7 @@ end</entry>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:39 UTC Thu Jul 2 2015
+! Last configuration change at 13:10:01 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -366,7 +366,7 @@ end</entry>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:32 UTC Thu Jul 2 2015
+! Last configuration change at 13:09:07 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -534,7 +534,7 @@ end</entry>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:34 UTC Thu Jul 2 2015
+! Last configuration change at 13:09:19 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -702,7 +702,7 @@ end</entry>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:28 UTC Thu Jul 2 2015
+! Last configuration change at 13:08:14 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -869,7 +869,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:22 UTC Thu Jul 2 2015
+! Last configuration change at 13:05:16 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -965,6 +965,8 @@ interface Tunnel100
  ip mtu 1400
  ip nhrp authentication NHRPKEY
  ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.2 172.16.255.2
+ ip nhrp map multicast 172.16.255.2
  ip nhrp network-id 100
  ip nhrp registration timeout 120
  ip nhrp redirect
@@ -1203,7 +1205,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:33 UTC Thu Jul 2 2015
+! Last configuration change at 13:04:46 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1299,6 +1301,8 @@ interface Tunnel100
  ip mtu 1400
  ip nhrp authentication NHRPKEY
  ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.1 172.16.255.1
+ ip nhrp map multicast 172.16.255.1
  ip nhrp network-id 100
  ip nhrp registration timeout 120
  ip nhrp redirect
@@ -1537,7 +1541,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:29 UTC Thu Jul 2 2015
+! Last configuration change at 13:06:10 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1797,7 +1801,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:32 UTC Thu Jul 2 2015
+! Last configuration change at 13:05:58 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2057,7 +2061,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:37 UTC Thu Jul 2 2015
+! Last configuration change at 13:08:05 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2317,7 +2321,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:54 UTC Thu Jul 2 2015
+! Last configuration change at 13:07:51 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2577,7 +2581,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:36:07 UTC Thu Jul 2 2015
+! Last configuration change at 13:07:33 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2837,7 +2841,7 @@ end</entry>
         <extensions>
             <entry type="Boolean" key="Auto-generate config">false</entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:35:50 UTC Thu Jul 2 2015
+! Last configuration change at 13:07:56 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec

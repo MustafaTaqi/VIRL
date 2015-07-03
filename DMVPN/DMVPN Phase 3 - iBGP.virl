@@ -10,7 +10,7 @@
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 12:46:03 UTC Thu Jul 2 2015
+! Last configuration change at 13:32:48 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -72,7 +72,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.99 255.255.0.0
+ ip address 10.255.0.2 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -196,7 +196,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:02:34 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:19 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -279,7 +279,7 @@ interface Loopback55
  ip address 10.1.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.19 255.255.0.0
+ ip address 10.255.0.13 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -363,7 +363,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:01:01 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:36 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -446,7 +446,7 @@ interface Loopback55
  ip address 10.2.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.29 255.255.0.0
+ ip address 10.255.0.11 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -530,7 +530,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:00:44 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:38 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -613,7 +613,7 @@ interface Loopback55
  ip address 10.3.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.39 255.255.0.0
+ ip address 10.255.0.12 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -697,7 +697,7 @@ end</entry>
         <extensions>
             <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
             <entry type="String" key="config">!
-! Last configuration change at 13:02:20 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:29 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -780,7 +780,7 @@ interface Loopback55
  ip address 10.0.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.9 255.255.0.0
+ ip address 10.255.0.14 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -863,7 +863,7 @@ end</entry>
     <node location="383,40" subtype="IOSv" type="SIMPLE" name="hub-1">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:58:10 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:16 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -959,6 +959,8 @@ interface Tunnel100
  ip mtu 1400
  ip nhrp authentication NHRPKEY
  ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.2 172.16.255.2
+ ip nhrp map multicast 172.16.255.2
  ip nhrp network-id 100
  ip nhrp registration timeout 120
  ip nhrp redirect
@@ -974,7 +976,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.1 255.255.0.0
+ ip address 10.255.0.8 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1202,7 +1204,7 @@ end</entry>
     <node location="597,45" subtype="IOSv" type="SIMPLE" name="hub-2">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:58:55 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:22 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1298,6 +1300,8 @@ interface Tunnel100
  ip mtu 1400
  ip nhrp authentication NHRPKEY
  ip nhrp map multicast dynamic
+ ip nhrp map 10.152.0.1 172.16.255.1
+ ip nhrp map multicast 172.16.255.1
  ip nhrp network-id 100
  ip nhrp registration timeout 120
  ip nhrp redirect
@@ -1313,7 +1317,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.2 255.255.0.0
+ ip address 10.255.0.7 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1541,7 +1545,7 @@ end</entry>
     <node location="133,289" subtype="IOSv" type="SIMPLE" name="spoke-1">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:59:02 UTC Thu Jul 2 2015
+! Last configuration change at 13:32:59 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1660,7 +1664,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.11 255.255.0.0
+ ip address 10.255.0.3 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1800,7 +1804,7 @@ end</entry>
     <node location="231,340" subtype="IOSv" type="SIMPLE" name="spoke-2">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:59:06 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:12 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1919,7 +1923,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.12 255.255.0.0
+ ip address 10.255.0.4 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2059,7 +2063,7 @@ end</entry>
     <node location="426,336" subtype="IOSv" type="SIMPLE" name="spoke-3">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:59:21 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:06 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2178,7 +2182,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.21 255.255.0.0
+ ip address 10.255.0.5 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2318,7 +2322,7 @@ end</entry>
     <node location="556,336" subtype="IOSv" type="SIMPLE" name="spoke-4">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 13:00:03 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:42 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2437,7 +2441,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.22 255.255.0.0
+ ip address 10.255.0.6 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2577,7 +2581,7 @@ end</entry>
     <node location="725,331" subtype="IOSv" type="SIMPLE" name="spoke-5">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 13:00:39 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:50 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2696,7 +2700,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.31 255.255.0.0
+ ip address 10.255.0.9 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2836,7 +2840,7 @@ end</entry>
     <node location="833,271" subtype="IOSv" type="SIMPLE" name="spoke-6">
         <extensions>
             <entry type="String" key="config">!
-! Last configuration change at 12:59:49 UTC Thu Jul 2 2015
+! Last configuration change at 13:33:38 UTC Fri Jul 3 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2955,7 +2959,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.32 255.255.0.0
+ ip address 10.255.0.10 255.255.0.0
  shutdown
  duplex auto
  speed auto
