@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.9" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.9/virl.xsd">
     <extensions>
-        <entry type="String" key="management_network">exclusive</entry>
-        <entry type="String" key="AutoNetkit.IGP">ospf</entry>
-        <entry type="Boolean" key="AutoNetkit.enable_routing">false</entry>
-        <entry type="Boolean" key="AutoNetkit.enable_cdp">true</entry>
+        <entry key="management_network" type="String">exclusive</entry>
+        <entry key="AutoNetkit.IGP" type="String">ospf</entry>
+        <entry key="AutoNetkit.enable_routing" type="Boolean">false</entry>
+        <entry key="AutoNetkit.enable_cdp" type="Boolean">true</entry>
     </extensions>
-    <node location="499,175" subtype="IOSv" type="SIMPLE" name="wan">
+    <node name="wan" type="SIMPLE" subtype="IOSv" location="499,175">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:32:48 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:35:28 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -183,20 +183,20 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
-        <interface name="GigabitEthernet0/3" id="2"/>
-        <interface name="GigabitEthernet0/4" id="3"/>
-        <interface name="GigabitEthernet0/5" id="4"/>
-        <interface name="GigabitEthernet0/6" id="5"/>
-        <interface name="GigabitEthernet0/7" id="6"/>
-        <interface name="GigabitEthernet0/8" id="7"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
+        <interface id="6" name="GigabitEthernet0/7"/>
+        <interface id="7" name="GigabitEthernet0/8"/>
     </node>
-    <node location="158,455" subtype="IOSv" type="SIMPLE" name="site-1">
+    <node name="site-1" type="SIMPLE" subtype="IOSv" location="158,455">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:19 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="config" type="String">!
+! Last configuration change at 15:25:46 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -356,14 +356,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="490,452" subtype="IOSv" type="SIMPLE" name="site-2">
+    <node name="site-2" type="SIMPLE" subtype="IOSv" location="490,452">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:36 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="config" type="String">!
+! Last configuration change at 15:29:29 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -523,14 +523,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="801,454" subtype="IOSv" type="SIMPLE" name="site-3">
+    <node name="site-3" type="SIMPLE" subtype="IOSv" location="801,454">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:38 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="config" type="String">!
+! Last configuration change at 15:28:30 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -690,14 +690,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="481,-53" subtype="IOSv" type="SIMPLE" name="hub-site">
+    <node name="hub-site" type="SIMPLE" subtype="IOSv" location="481,-53">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:29 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="config" type="String">!
+! Last configuration change at 15:27:03 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -857,13 +857,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="383,40" subtype="IOSv" type="SIMPLE" name="hub-1">
+    <node name="hub-1" type="SIMPLE" subtype="IOSv" location="383,40">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:16 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:13:28 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -962,6 +962,7 @@ interface Tunnel100
  ip nhrp map 10.152.0.2 172.16.255.2
  ip nhrp map multicast 172.16.255.2
  ip nhrp network-id 100
+ ip nhrp nhs 10.152.0.2
  ip nhrp registration timeout 120
  ip nhrp redirect
  ip tcp adjust-mss 1360
@@ -1037,6 +1038,7 @@ router bgp 65000
  timers bgp 5 15
  redistribute connected
  redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor 10.152.0.2 remote-as 65000
  neighbor 10.152.0.11 inherit peer-session DMVPN-SESS
  neighbor 10.152.0.11 inherit peer-policy DMVPN-PRI
  neighbor 10.152.0.12 inherit peer-session DMVPN-SESS
@@ -1198,13 +1200,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="597,45" subtype="IOSv" type="SIMPLE" name="hub-2">
+    <node name="hub-2" type="SIMPLE" subtype="IOSv" location="597,45">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:22 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:13:59 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1303,6 +1305,7 @@ interface Tunnel100
  ip nhrp map 10.152.0.1 172.16.255.1
  ip nhrp map multicast 172.16.255.1
  ip nhrp network-id 100
+ ip nhrp nhs 10.152.0.1
  ip nhrp registration timeout 120
  ip nhrp redirect
  ip tcp adjust-mss 1360
@@ -1378,6 +1381,7 @@ router bgp 65000
  timers bgp 5 15
  redistribute connected
  redistribute eigrp 10 route-map eigrp-to-bgp
+ neighbor 10.152.0.1 remote-as 65000
  neighbor 10.152.0.11 inherit peer-session DMVPN-SESS
  neighbor 10.152.0.11 inherit peer-policy DMVPN-PRI
  neighbor 10.152.0.12 inherit peer-session DMVPN-SESS
@@ -1539,13 +1543,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="133,289" subtype="IOSv" type="SIMPLE" name="spoke-1">
+    <node name="spoke-1" type="SIMPLE" subtype="IOSv" location="133,289">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:32:59 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:21:37 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1798,13 +1802,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="231,340" subtype="IOSv" type="SIMPLE" name="spoke-2">
+    <node name="spoke-2" type="SIMPLE" subtype="IOSv" location="231,340">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:12 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:23:43 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2057,13 +2061,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="426,336" subtype="IOSv" type="SIMPLE" name="spoke-3">
+    <node name="spoke-3" type="SIMPLE" subtype="IOSv" location="426,336">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:06 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:23:07 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2316,13 +2320,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="556,336" subtype="IOSv" type="SIMPLE" name="spoke-4">
+    <node name="spoke-4" type="SIMPLE" subtype="IOSv" location="556,336">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:42 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:23:24 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2575,13 +2579,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="725,331" subtype="IOSv" type="SIMPLE" name="spoke-5">
+    <node name="spoke-5" type="SIMPLE" subtype="IOSv" location="725,331">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:50 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:23:47 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2834,13 +2838,13 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="833,271" subtype="IOSv" type="SIMPLE" name="spoke-6">
+    <node name="spoke-6" type="SIMPLE" subtype="IOSv" location="833,271">
         <extensions>
-            <entry type="String" key="config">!
-! Last configuration change at 13:33:38 UTC Fri Jul 3 2015
+            <entry key="config" type="String">!
+! Last configuration change at 15:24:24 UTC Tue Jul 21 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -3093,23 +3097,23 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[1]" dst="/virl:topology/virl:node[6]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[2]" dst="/virl:topology/virl:node[7]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[3]" dst="/virl:topology/virl:node[8]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[4]" dst="/virl:topology/virl:node[9]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[5]" dst="/virl:topology/virl:node[10]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[6]" dst="/virl:topology/virl:node[11]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[7]" dst="/virl:topology/virl:node[12]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[8]" dst="/virl:topology/virl:node[13]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[6]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[7]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[8]/virl:interface[2]" dst="/virl:topology/virl:node[2]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[9]/virl:interface[2]" dst="/virl:topology/virl:node[2]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[10]/virl:interface[2]" dst="/virl:topology/virl:node[3]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[11]/virl:interface[2]" dst="/virl:topology/virl:node[3]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[12]/virl:interface[2]" dst="/virl:topology/virl:node[4]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[13]/virl:interface[2]" dst="/virl:topology/virl:node[4]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[6]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[7]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[8]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[2]" src="/virl:topology/virl:node[7]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[8]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[2]" src="/virl:topology/virl:node[9]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[10]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[11]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
 </topology>
