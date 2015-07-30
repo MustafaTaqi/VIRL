@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <topology xmlns="http://www.cisco.com/VIRL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaVersion="0.9" xsi:schemaLocation="http://www.cisco.com/VIRL https://raw.github.com/CiscoVIRL/schema/v0.9/virl.xsd">
     <extensions>
-        <entry type="String" key="management_network">exclusive</entry>
-        <entry type="Boolean" key="AutoNetkit.enable_routing">false</entry>
-        <entry type="Boolean" key="AutoNetkit.enable_cdp">true</entry>
-        <entry type="String" key="AutoNetkit.IGP">ospf</entry>
+        <entry key="management_network" type="String">exclusive</entry>
+        <entry key="AutoNetkit.enable_routing" type="Boolean">false</entry>
+        <entry key="AutoNetkit.enable_cdp" type="Boolean">true</entry>
+        <entry key="AutoNetkit.IGP" type="String">ospf</entry>
     </extensions>
-    <node location="499,175" subtype="IOSv" type="SIMPLE" name="wan">
+    <node name="wan" type="SIMPLE" subtype="IOSv" location="499,175">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 12:54:32 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:02:44 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -184,21 +184,21 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
-        <interface name="GigabitEthernet0/3" id="2"/>
-        <interface name="GigabitEthernet0/4" id="3"/>
-        <interface name="GigabitEthernet0/5" id="4"/>
-        <interface name="GigabitEthernet0/6" id="5"/>
-        <interface name="GigabitEthernet0/7" id="6"/>
-        <interface name="GigabitEthernet0/8" id="7"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
+        <interface id="4" name="GigabitEthernet0/5"/>
+        <interface id="5" name="GigabitEthernet0/6"/>
+        <interface id="6" name="GigabitEthernet0/7"/>
+        <interface id="7" name="GigabitEthernet0/8"/>
     </node>
-    <node location="158,455" subtype="IOSv" type="SIMPLE" name="site-1">
+    <node name="site-1" type="SIMPLE" subtype="IOSv" location="158,455">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:10:01 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:24 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -358,15 +358,15 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="490,452" subtype="IOSv" type="SIMPLE" name="site-2">
+    <node name="site-2" type="SIMPLE" subtype="IOSv" location="490,452">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:09:07 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:28 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -526,15 +526,15 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="801,454" subtype="IOSv" type="SIMPLE" name="site-3">
+    <node name="site-3" type="SIMPLE" subtype="IOSv" location="801,454">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:09:19 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:13 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -694,15 +694,15 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="481,-53" subtype="IOSv" type="SIMPLE" name="hub-site">
+    <node name="hub-site" type="SIMPLE" subtype="IOSv" location="481,-53">
         <extensions>
-            <entry type="string" key="AutoNetkit.mgmt_ip"></entry>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:08:14 UTC Fri Jul 3 2015
+            <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:14 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -862,14 +862,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="383,40" subtype="IOSv" type="SIMPLE" name="hub-1">
+    <node name="hub-1" type="SIMPLE" subtype="IOSv" location="383,40">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:05:16 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:05:36 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -928,17 +928,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1198,14 +1199,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="597,45" subtype="IOSv" type="SIMPLE" name="hub-2">
+    <node name="hub-2" type="SIMPLE" subtype="IOSv" location="597,45">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:04:46 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:05:29 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1264,17 +1265,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1534,14 +1536,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="133,289" subtype="IOSv" type="SIMPLE" name="spoke-1">
+    <node name="spoke-1" type="SIMPLE" subtype="IOSv" location="133,289">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:06:10 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:05:53 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1600,17 +1602,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1794,14 +1797,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="231,340" subtype="IOSv" type="SIMPLE" name="spoke-2">
+    <node name="spoke-2" type="SIMPLE" subtype="IOSv" location="231,340">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:05:58 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:05:45 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1860,17 +1863,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2054,14 +2058,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="426,336" subtype="IOSv" type="SIMPLE" name="spoke-3">
+    <node name="spoke-3" type="SIMPLE" subtype="IOSv" location="426,336">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:08:05 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:05:55 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2120,17 +2124,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2314,14 +2319,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="556,336" subtype="IOSv" type="SIMPLE" name="spoke-4">
+    <node name="spoke-4" type="SIMPLE" subtype="IOSv" location="556,336">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:07:51 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:09:21 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2380,17 +2385,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2440,7 +2446,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.6 255.255.0.0
+ ip address 10.255.0.16 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2574,14 +2580,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="725,331" subtype="IOSv" type="SIMPLE" name="spoke-5">
+    <node name="spoke-5" type="SIMPLE" subtype="IOSv" location="725,331">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:07:33 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:31 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2640,17 +2646,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2834,14 +2841,14 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <node location="833,271" subtype="IOSv" type="SIMPLE" name="spoke-6">
+    <node name="spoke-6" type="SIMPLE" subtype="IOSv" location="833,271">
         <extensions>
-            <entry type="Boolean" key="Auto-generate config">false</entry>
-            <entry type="String" key="config">!
-! Last configuration change at 13:07:56 UTC Fri Jul 3 2015
+            <entry key="Auto-generate config" type="Boolean">false</entry>
+            <entry key="config" type="String">!
+! Last configuration change at 14:06:18 UTC Thu Jul 30 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2900,17 +2907,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -3094,23 +3102,23 @@ no scheduler allocate
 !
 end</entry>
         </extensions>
-        <interface name="GigabitEthernet0/1" id="0"/>
-        <interface name="GigabitEthernet0/2" id="1"/>
+        <interface id="0" name="GigabitEthernet0/1"/>
+        <interface id="1" name="GigabitEthernet0/2"/>
     </node>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[1]" dst="/virl:topology/virl:node[6]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[2]" dst="/virl:topology/virl:node[7]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[3]" dst="/virl:topology/virl:node[8]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[4]" dst="/virl:topology/virl:node[9]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[5]" dst="/virl:topology/virl:node[10]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[6]" dst="/virl:topology/virl:node[11]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[7]" dst="/virl:topology/virl:node[12]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[1]/virl:interface[8]" dst="/virl:topology/virl:node[13]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[6]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[7]/virl:interface[2]" dst="/virl:topology/virl:node[5]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[8]/virl:interface[2]" dst="/virl:topology/virl:node[2]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[9]/virl:interface[2]" dst="/virl:topology/virl:node[2]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[10]/virl:interface[2]" dst="/virl:topology/virl:node[3]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[11]/virl:interface[2]" dst="/virl:topology/virl:node[3]/virl:interface[2]"/>
-    <connection src="/virl:topology/virl:node[12]/virl:interface[2]" dst="/virl:topology/virl:node[4]/virl:interface[1]"/>
-    <connection src="/virl:topology/virl:node[13]/virl:interface[2]" dst="/virl:topology/virl:node[4]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
+    <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[9]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[4]"/>
+    <connection dst="/virl:topology/virl:node[10]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[5]"/>
+    <connection dst="/virl:topology/virl:node[11]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[6]"/>
+    <connection dst="/virl:topology/virl:node[12]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[7]"/>
+    <connection dst="/virl:topology/virl:node[13]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[8]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[1]" src="/virl:topology/virl:node[6]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[5]/virl:interface[2]" src="/virl:topology/virl:node[7]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[1]" src="/virl:topology/virl:node[8]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[2]/virl:interface[2]" src="/virl:topology/virl:node[9]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[1]" src="/virl:topology/virl:node[10]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[11]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
 </topology>

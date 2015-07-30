@@ -10,7 +10,7 @@
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="config" type="String">!
-! Last configuration change at 14:35:28 UTC Tue Jul 21 2015
+! Last configuration change at 00:12:21 UTC Tue Jul 28 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -196,7 +196,7 @@ end</entry>
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:25:46 UTC Tue Jul 21 2015
+! Last configuration change at 03:54:31 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -363,7 +363,7 @@ end</entry>
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:29:29 UTC Tue Jul 21 2015
+! Last configuration change at 06:07:05 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -530,7 +530,7 @@ end</entry>
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:28:30 UTC Tue Jul 21 2015
+! Last configuration change at 05:27:08 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -697,7 +697,7 @@ end</entry>
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:27:03 UTC Tue Jul 21 2015
+! Last configuration change at 04:31:03 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -863,7 +863,7 @@ end</entry>
     <node name="hub-1" type="SIMPLE" subtype="IOSv" location="383,40">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:13:28 UTC Tue Jul 21 2015
+! Last configuration change at 18:03:28 UTC Tue Jul 28 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -922,17 +922,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1206,7 +1207,7 @@ end</entry>
     <node name="hub-2" type="SIMPLE" subtype="IOSv" location="597,45">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:13:59 UTC Tue Jul 21 2015
+! Last configuration change at 17:59:45 UTC Tue Jul 28 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1265,17 +1266,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1549,7 +1551,7 @@ end</entry>
     <node name="spoke-1" type="SIMPLE" subtype="IOSv" location="133,289">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:21:37 UTC Tue Jul 21 2015
+! Last configuration change at 00:52:52 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1608,17 +1610,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -1808,7 +1811,7 @@ end</entry>
     <node name="spoke-2" type="SIMPLE" subtype="IOSv" location="231,340">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:23:43 UTC Tue Jul 21 2015
+! Last configuration change at 01:50:07 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1867,17 +1870,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2067,7 +2071,7 @@ end</entry>
     <node name="spoke-3" type="SIMPLE" subtype="IOSv" location="426,336">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:23:07 UTC Tue Jul 21 2015
+! Last configuration change at 01:39:11 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2126,17 +2130,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2326,7 +2331,7 @@ end</entry>
     <node name="spoke-4" type="SIMPLE" subtype="IOSv" location="556,336">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:23:24 UTC Tue Jul 21 2015
+! Last configuration change at 00:57:54 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2385,17 +2390,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2585,7 +2591,7 @@ end</entry>
     <node name="spoke-5" type="SIMPLE" subtype="IOSv" location="725,331">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:23:47 UTC Tue Jul 21 2015
+! Last configuration change at 01:31:11 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2644,17 +2650,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
@@ -2844,7 +2851,7 @@ end</entry>
     <node name="spoke-6" type="SIMPLE" subtype="IOSv" location="833,271">
         <extensions>
             <entry key="config" type="String">!
-! Last configuration change at 15:24:24 UTC Tue Jul 21 2015
+! Last configuration change at 01:45:39 UTC Wed Jul 29 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2903,17 +2910,18 @@ crypto keyring DMVPN_KEYRING vrf f-vrf
 !
 !
 crypto isakmp policy 10
- encr aes 192
- hash md5
+ encr aes 256
+ hash sha512
  authentication pre-share
- group 2
+ group 14
 crypto isakmp invalid-spi-recovery
 crypto isakmp keepalive 10 periodic
+crypto isakmp aggressive-mode disable
 !
 crypto ipsec security-association replay window-size 1024
 !
-crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 192 esp-md5-hmac 
- mode tunnel
+crypto ipsec transform-set DMVPN_TRANS_SET esp-aes 256 esp-sha512-hmac 
+ mode transport
 !
 crypto ipsec profile DMVPN_PROFILE
  set security-association lifetime seconds 120
