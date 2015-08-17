@@ -1187,7 +1187,7 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
     </node>
-    <node name="DHCP_Server" type="SIMPLE" subtype="CSR1000v" location="434,84">
+    <node name="DHCP_Server" type="SIMPLE" subtype="CSR1000v" location="478,84">
         <extensions>
             <entry key="config" type="String">!
 ! Last configuration change at 15:39:37 UTC Fri Aug 14 2015
