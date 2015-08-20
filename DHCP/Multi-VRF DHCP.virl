@@ -517,6 +517,7 @@ end</entry>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
         <interface id="2" name="GigabitEthernet0/3"/>
+        <interface id="3" name="GigabitEthernet0/4"/>
     </node>
     <node name="DC" type="SIMPLE" subtype="IOSv" location="273,92">
         <extensions>
