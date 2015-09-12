@@ -5,13 +5,14 @@
         <entry key="AutoNetkit.enable_routing" type="Boolean">false</entry>
         <entry key="AutoNetkit.enable_cdp" type="Boolean">true</entry>
         <entry key="AutoNetkit.IGP" type="String">ospf</entry>
+        <entry key="management_lxc" type="Boolean">true</entry>
     </extensions>
     <node name="wan" type="SIMPLE" subtype="IOSv" location="499,175">
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:03:33 UTC Thu Jul 30 2015
+! Last configuration change at 13:47:54 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -30,7 +31,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -73,7 +73,7 @@ redundancy
 !
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.2 255.255.0.0
+ ip address 10.255.0.19 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -198,7 +198,7 @@ end</entry>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:13:24 UTC Thu Jul 30 2015
+! Last configuration change at 13:51:45 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -217,7 +217,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -281,7 +280,7 @@ interface Loopback55
  ip address 10.1.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.13 255.255.0.0
+ ip address 10.255.0.5 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -295,6 +294,12 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  ip address 10.1.254.6 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.1.3.1 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -360,13 +365,14 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="site-2" type="SIMPLE" subtype="IOSv" location="490,452">
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:13:11 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:15 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -385,7 +391,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -449,7 +454,7 @@ interface Loopback55
  ip address 10.2.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.11 255.255.0.0
+ ip address 10.255.0.7 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -463,6 +468,12 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  ip address 10.2.254.6 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.2.3.1 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -528,13 +539,14 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="site-3" type="SIMPLE" subtype="IOSv" location="801,454">
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:12:45 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:24 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -553,7 +565,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -617,7 +628,7 @@ interface Loopback55
  ip address 10.3.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.12 255.255.0.0
+ ip address 10.255.0.8 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -631,6 +642,12 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  ip address 10.3.254.6 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.3.3.1 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -696,13 +713,14 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="hub-site" type="SIMPLE" subtype="IOSv" location="481,-53">
         <extensions>
             <entry key="AutoNetkit.mgmt_ip" type="string"></entry>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:12:37 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:41 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -721,7 +739,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -785,7 +802,7 @@ interface Loopback55
  ip address 10.0.130.1 255.255.255.0
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.14 255.255.0.0
+ ip address 10.255.0.10 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -799,6 +816,12 @@ interface GigabitEthernet0/1
 !
 interface GigabitEthernet0/2
  ip address 10.0.254.6 255.255.255.252
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ ip address 10.0.3.1 255.255.255.0
  duplex auto
  speed auto
  media-type rj45
@@ -864,12 +887,13 @@ end</entry>
         </extensions>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
+        <interface id="2" name="GigabitEthernet0/3"/>
     </node>
     <node name="hub-1" type="SIMPLE" subtype="IOSv" location="383,40">
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:10:47 UTC Thu Jul 30 2015
+! Last configuration change at 13:51:52 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -888,7 +912,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -987,7 +1010,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.8 255.255.0.0
+ ip address 10.255.0.11 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1207,7 +1230,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:09:34 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:06 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1226,7 +1249,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -1325,7 +1347,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.7 255.255.0.0
+ ip address 10.255.0.13 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1545,7 +1567,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:09:48 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:07 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1564,7 +1586,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -1666,7 +1687,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.6 255.255.0.0
+ ip address 10.255.0.12 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -1891,7 +1912,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:10:52 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:17 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -1910,7 +1931,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -2012,7 +2032,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.5 255.255.0.0
+ ip address 10.255.0.14 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2237,7 +2257,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:10:54 UTC Thu Jul 30 2015
+! Last configuration change at 13:51:39 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2256,7 +2276,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -2363,7 +2382,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.3 255.255.0.0
+ ip address 10.255.0.4 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2512,7 +2531,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:10:49 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:37 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2531,7 +2550,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -2638,7 +2656,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.4 255.255.0.0
+ ip address 10.255.0.9 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -2787,7 +2805,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:11:26 UTC Thu Jul 30 2015
+! Last configuration change at 13:52:03 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -2806,7 +2824,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -2913,7 +2930,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.9 255.255.0.0
+ ip address 10.255.0.1 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -3062,7 +3079,7 @@ end</entry>
         <extensions>
             <entry key="Auto-generate config" type="Boolean">false</entry>
             <entry key="config" type="String">!
-! Last configuration change at 15:10:49 UTC Thu Jul 30 2015
+! Last configuration change at 13:51:56 UTC Fri Sep 11 2015
 !
 version 15.5
 service timestamps debug datetime msec
@@ -3081,7 +3098,6 @@ ethernet lmi ce
 !
 !
 !
-bsd-client server url https://cloudsso.cisco.com/as/token.oauth2
 mmi polling-interval 60
 no mmi auto-configure
 no mmi pvc
@@ -3188,7 +3204,7 @@ interface Tunnel100
  tunnel protection ipsec profile DMVPN_PROFILE
 !
 interface GigabitEthernet0/0
- ip address 10.255.0.10 255.255.0.0
+ ip address 10.255.0.2 255.255.0.0
  shutdown
  duplex auto
  speed auto
@@ -3333,6 +3349,30 @@ end</entry>
         <interface id="0" name="GigabitEthernet0/1"/>
         <interface id="1" name="GigabitEthernet0/2"/>
     </node>
+    <node name="lxc-iperf-1" type="SIMPLE" subtype="lxc-iperf" location="155,541">
+        <extensions>
+            <entry key="config" type="string"> </entry>
+        </extensions>
+        <interface id="0" name="eth1" ipv4="10.0.0.49" netPrefixLenV4="30"/>
+    </node>
+    <node name="lxc-iperf-2" type="SIMPLE" subtype="lxc-iperf" location="491,547">
+        <extensions>
+            <entry key="config" type="string"> </entry>
+        </extensions>
+        <interface id="0" name="eth1" ipv4="10.0.0.61" netPrefixLenV4="30"/>
+    </node>
+    <node name="lxc-iperf-3" type="SIMPLE" subtype="lxc-iperf" location="834,558">
+        <extensions>
+            <entry key="config" type="string"> </entry>
+        </extensions>
+        <interface id="0" name="eth1" ipv4="10.0.0.73" netPrefixLenV4="30"/>
+    </node>
+    <node name="lxc-iperf-4" type="SIMPLE" subtype="lxc-iperf" location="612,-71">
+        <extensions>
+            <entry key="config" type="string"> </entry>
+        </extensions>
+        <interface id="0" name="eth1" ipv4="10.0.0.34" netPrefixLenV4="30"/>
+    </node>
     <connection dst="/virl:topology/virl:node[6]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[1]"/>
     <connection dst="/virl:topology/virl:node[7]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[2]"/>
     <connection dst="/virl:topology/virl:node[8]/virl:interface[1]" src="/virl:topology/virl:node[1]/virl:interface[3]"/>
@@ -3349,4 +3389,8 @@ end</entry>
     <connection dst="/virl:topology/virl:node[3]/virl:interface[2]" src="/virl:topology/virl:node[11]/virl:interface[2]"/>
     <connection dst="/virl:topology/virl:node[4]/virl:interface[1]" src="/virl:topology/virl:node[12]/virl:interface[2]"/>
     <connection dst="/virl:topology/virl:node[4]/virl:interface[2]" src="/virl:topology/virl:node[13]/virl:interface[2]"/>
+    <connection dst="/virl:topology/virl:node[15]/virl:interface[1]" src="/virl:topology/virl:node[3]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[16]/virl:interface[1]" src="/virl:topology/virl:node[4]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[17]/virl:interface[1]" src="/virl:topology/virl:node[5]/virl:interface[3]"/>
+    <connection dst="/virl:topology/virl:node[14]/virl:interface[1]" src="/virl:topology/virl:node[2]/virl:interface[3]"/>
 </topology>
